@@ -138,6 +138,7 @@
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(22, 101, 52, 0.8), rgba(22, 101, 52, 0.4));
+            background-image: url(./assets/background.png);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -234,6 +235,7 @@
         .process-card {
             background: var(--card-bg);
             padding: 2rem;
+            /* width:20rem; */
             border-radius: 12px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -246,7 +248,7 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .process-icon {
+        /* .process-icon {
             width: 60px;
             height: 60px;
             background: var(--primary-color);
@@ -257,7 +259,7 @@
             margin: 0 auto 1rem;
             color: white;
             font-size: 1.5rem;
-        }
+        } */
 
         .process-card h3 {
             font-size: 1.5rem;
@@ -490,6 +492,38 @@
                 box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
             }
         }
+
+        .my-text {
+            /* color: #000; your text color */
+            text-shadow: 2px 2px 5px rgb(66, 158, 189);
+        }
+        .my-text2{
+             text-shadow: 2px 2px 5px rgb(191, 229, 241);
+        }
+        .para-text{
+            text-shadow: 2px 2px #000000;
+        }
+
+        .header_image{
+            height:9rem;
+        }
+
+        .waste-img{
+             background-image: url(./assets/waste-collection.jpg);
+             background-repeat: no-repeat;
+             background-size: cover;
+              color: white;
+        }
+        .process-card-heading{
+            /* color: white; */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), -2px -2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.7);
+        }
+        .Three-R-img{
+            background-image: url(./assets/3R.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
     </style>
 </head>
 
@@ -522,11 +556,14 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>
+            <div class="p-3 pb-0 mt-3 mb-2">
+                <!-- <img src="./assets/3R Logo.JPG" class="header_image" alt="3R_image"> -->
+            </div>
+            <h1 class="my-text">
                 Transforming Industrial Waste into<br>
-                <span class="accent">Valuable Eco-Gypsum</span>
+                <span class="accent my-text2">Valuable Eco-Gypsum</span>
             </h1>
-            <p>
+            <p class="para-text">
                 Driving Circular Economy with 3R Innovation — Protecting Environment,
                 Preserving Resources by Converting Multiple Industrial Wastes into Eco-Gypsum
             </p>
@@ -548,21 +585,30 @@
 
             <div class="process-grid">
                 <div class="process-card fade-in">
-                    <div class="process-icon">🏭</div>
+                    <div class="process-icon mb-3" style="height: 3rem;">
+                        <img class="h-100" src="./assets/truck.png" alt="">
+                    </div>
                     <h3>Waste Collection</h3>
-                    <p>Multiple industrial wastes including hazardous materials from various plants are collected as raw
+                    <p class="waste-collection-text">Multiple industrial wastes including hazardous materials from various plants are collected as raw
                         materials for conversion.</p>
                 </div>
                 <div class="process-card fade-in">
-                    <div class="process-icon">♻️</div>
-                    <h3>3R Processing</h3>
-                    <p>Patented ambient temperature conversion without heat treatment or melting, using innovative
-                        catalytic processes.</p>
+                    <div class="process-icon mb-3"  style="height: 3rem;">
+                        <img class="h-100" src="./assets/reduce.png" alt="">
+                    </div>
+                    <div>
+                        <h3 class="proces">3R Processing</h3>
+                        <p>Patented ambient temperature conversion without heat treatment or melting, using innovative
+                            catalytic processes.
+                        </p>
+                    </div>
                 </div>
                 <div class="process-card fade-in">
-                    <div class="process-icon">🌱</div>
+                    <div class="process-icon mb-3"  style="height: 3rem;">
+                         <img class="h-100" src="./assets/gypsum.png" alt="">
+                    </div>
                     <h3>Eco-Gypsum Output</h3>
-                    <p>High-quality, non-degradable, eco-friendly product suitable for cement, chemical, and
+                    <p class="pb-3">High-quality, non-degradable, eco-friendly product suitable for cement, chemical, and
                         construction industries.</p>
                 </div>
             </div>
@@ -621,26 +667,26 @@
         <div >
             <h2 class="section-title">Company Information</h2>
             <div class="row justify-content-center">
-                <div class="info-card fade-in col-md-5 m-3 p-2">
+                <div class="info-card fade-in col-md-5 m-3 p-4">
                     <h3>Eco Bounty Highway Private Limited</h3>
                     <p><strong>CIN:</strong> U37200RJ2016PTC056514</p>
                     <p><strong>MSME Startup Co. DIPP No.:</strong> 1687</p>
                     <p><strong>Founded:</strong> 2016</p>
                 </div>
-                <div class="info-card fade-in col-md-5 m-3 p-2">
+                <div class="info-card fade-in col-md-5 m-3 p-4">
                     <h3>Registered Office</h3>
                     <p>13-C Opp Town Hall</p>
                     <p>Udaipur - 313001</p>
                     <p>Rajasthan, India</p>
                 </div>
-                <div class="info-card fade-in col-md-5 m-3 p-2">
+                <div class="info-card fade-in col-md-5 m-3 p-4">
                     <h3>Manufacturing Facility</h3>
                     <p>Kharsa No 1696/396, 1697/396, 1699/397</p>
                     <p>1700/397, 1702/398, 1703/398</p>
                     <p>Village Lopra, Tehsil Mavli 313 203</p>
                     <p>Dist Udaipur, Rajasthan</p>
                 </div>
-                <div class="info-card fade-in col-md-5 m-3 p-2">
+                <div class="info-card fade-in col-md-5 m-3 p-4">
                     <h3>Leadership</h3>
                     <p><strong>Managing Director:</strong> Harish Kandhari</p>
                     <p><strong>Patent Holder</strong></p>
