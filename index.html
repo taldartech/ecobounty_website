@@ -1,813 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco Bounty - 3R Eco Gypsum Technology | Industrial Waste to Sustainable Resources</title>
-    <meta name="description"
-        content="Transform industrial waste into valuable eco-gypsum with our patented 3R technology. Zero effluent, sustainable circular economy solutions for cement and construction industries.">
-    <meta property="og:title" content="Eco Bounty Highway - Industrial Waste Monetization Technology">
-    <meta property="og:description"
-        content="Converting multiple industrial wastes into eco-gypsum through innovative 3R technology. Driving circular economy with zero effluent solutions.">
-    <meta property="og:type" content="website">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="icon" href="./assets/3R Logo.JPG">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: hsl(150, 70%, 25%);
-            --accent-color: hsl(200, 85%, 45%);
-            --earth-color: hsl(35, 40%, 55%);
-            --background: hsl(0, 0%, 98%);
-            --foreground: hsl(210, 15%, 20%);
-            --muted: hsl(210, 15%, 45%);
-            --card-bg: hsl(0, 0%, 100%);
-            --border: hsl(0, 0%, 90%);
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--foreground);
-            background-color: var(--background);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Navigation */
-        .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 45px;
-            width: auto;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--foreground);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Mobile Menu Button */
-        .mobile-menu-button {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 4px;
-            background: none;
-            border: none;
-            z-index: 1001;
-        }
-
-        .mobile-menu-button span {
-            width: 25px;
-            height: 3px;
-            background: var(--primary-color);
-            margin: 3px 0;
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-
-        /* Mobile menu animations */
-        .mobile-menu-button.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .mobile-menu-button.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-button.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(22, 101, 52, 0.8), rgba(22, 101, 52, 0.4));
-            background-image: url(./assets/background.png);
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .hero .accent {
-            color: var(--accent-color);
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            cursor: pointer;
-            margin: 0 8px;
-        }
-
-        .btn-primary {
-            background: var(--accent-color);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: hsl(200, 85%, 40%);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Section Styles */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: var(--foreground);
-        }
-
-        .section-subtitle {
-            font-size: 1.25rem;
-            text-align: center;
-            color: var(--muted);
-            max-width: 600px;
-            margin: 0 auto 3rem;
-        }
-
-        /* Technology Overview */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .process-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            /* width:20rem; */
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .process-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        /* .process-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--primary-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            color: white;
-            font-size: 1.5rem;
-        } */
-
-        .process-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--foreground);
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-        }
-
-        .benefit-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border);
-        }
-
-        .benefit-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .benefit-list {
-            list-style: none;
-        }
-
-        .benefit-list li {
-            padding: 0.5rem 0;
-            color: var(--muted);
-        }
-
-        .benefit-list li:before {
-            content: "✓";
-            color: var(--primary-color);
-            font-weight: bold;
-            margin-right: 0.5rem;
-        }
-
-        /* Patent Section */
-        .patent-section {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            color: white;
-        }
-
-        .patent-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .patent-number {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-        }
-
-        /* Company Info */
-        .company-info {
-            background: var(--card-bg);
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-
-        .info-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .info-card{
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .info-card p {
-            color: var(--muted);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background: var(--background);
-            text-align: center;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--foreground);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .mobile-menu-button {
-                display: flex;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(10px);
-                flex-direction: column;
-                padding: 1rem 0;
-                border-top: 1px solid var(--border);
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                margin: 0;
-                text-align: center;
-            }
-
-            .nav-links a {
-                display: block;
-                padding: 1rem;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .nav-links a:last-child {
-                border-bottom: none;
-            }
-
-            .process-grid,
-            .benefits-grid,
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Animation classes */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* WhatsApp Button */
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            background: #25d366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            animation: pulse 2s infinite;
-        }
-
-        .whatsapp-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-        }
-
-        .whatsapp-button svg {
-            width: 32px;
-            height: 32px;
-            color: white;
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-            }
-
-            50% {
-                box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4), 0 0 0 10px rgba(37, 211, 102, 0.1);
-            }
-
-            100% {
-                box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-            }
-        }
-
-        .my-text {
-            /* color: #000; your text color */
-            text-shadow: 2px 2px 5px rgb(66, 158, 189);
-        }
-        .my-text2{
-             text-shadow: 2px 2px 5px rgb(191, 229, 241);
-        }
-        .para-text{
-            text-shadow: 2px 2px #000000;
-        }
-
-        .header_image{
-            height:9rem;
-        }
-
-        .waste-img{
-             background-image: url(./assets/waste-collection.jpg);
-             background-repeat: no-repeat;
-             background-size: cover;
-              color: white;
-        }
-        .process-card-heading{
-            /* color: white; */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), -2px -2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.7);
-        }
-        .Three-R-img{
-            background-image: url(./assets/3R.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eco-Gypsum | Circular Economy 3R Technology</title>
+  <meta name="description" content="Eco-Gypsum: Patented 3R innovation converting multiple industrial wastes into sustainable gypsum for cement. Circular economy, zero residue, import substitute." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="icon" href="./assets/3R%20Logo.JPG">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary-color: hsl(150, 70%, 25%);
+      --accent-color: hsl(200, 85%, 45%);
+      --earth-color: hsl(35, 40%, 55%);
+      --background: hsl(0, 0%, 98%);
+      --foreground: hsl(210, 15%, 20%);
+      --muted: hsl(210, 15%, 45%);
+      --card-bg: hsl(0, 0%, 100%);
+      --border: hsl(0, 0%, 90%);
+    }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--foreground); background: var(--background); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    .header { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); position: fixed; top:0; left:0; right:0; z-index:1000; border-bottom:1px solid var(--border); }
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+    .logo { display:flex; align-items:center; gap:.75rem; font-weight:700; color:var(--primary-color); text-decoration:none; }
+    .logo img { height:45px; width:auto; }
+    .nav-links { display:flex; list-style:none; gap:2rem; }
+    .nav-links a { text-decoration:none; color:var(--foreground); font-weight:500; }
+    .nav-links a:hover { color:var(--primary-color); }
+    .mobile-menu-button { display:none; flex-direction:column; cursor:pointer; background:none; border:none; padding:4px; }
+    .mobile-menu-button span { width:25px; height:3px; background:var(--primary-color); margin:3px 0; border-radius:2px; transition:.3s; }
+    .mobile-menu-button.active span:nth-child(1){ transform: rotate(-45deg) translate(-5px,6px);} 
+    .mobile-menu-button.active span:nth-child(2){ opacity:0;} 
+    .mobile-menu-button.active span:nth-child(3){ transform: rotate(45deg) translate(-5px,-6px);} 
+
+    /* Hero */
+    .hero { height: 100vh; background: url('./assets/eco5.jpg') center/cover no-repeat fixed; display:flex; align-items:center; justify-content:center; text-align:center; color:#fff; }
+    .hero h1 { font-size:3.2rem; font-weight:800; line-height:1.2; margin-bottom:1rem; text-shadow: 2px 2px 5px rgba(66,158,189,.8); }
+    .hero .accent { color: var(--accent-color); text-shadow: 2px 2px 5px rgba(191,229,241,1); }
+    .hero p { font-size:1.15rem; opacity:.95; margin-bottom:1.5rem; text-shadow: 2px 2px #000; }
+    .btn { display:inline-block; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:600; border:2px solid transparent; cursor:pointer; transition: all .25s ease; margin: 0 6px; }
+    .btn-primary { background: var(--accent-color); color:#fff; }
+    .btn-primary:hover { background: hsl(200, 85%, 40%); transform: translateY(-2px); }
+    .btn-outline { background: rgba(255,255,255,0.1); color:#fff; border-color: rgba(255,255,255,0.35); backdrop-filter: blur(10px); }
+    .btn-outline:hover { background: rgba(255,255,255,0.2); }
+
+    /* Sections */
+    .section { padding: 80px 0; }
+    .section-title { font-size:2.25rem; font-weight:800; text-align:center; margin-bottom: .5rem; }
+    .section-subtitle { text-align:center; color: var(--muted); max-width: 720px; margin: 0 auto 2.5rem; }
+
+    .grid-3 { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .grid-2 { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: start; }
+
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+    .card h3 { font-size: 1.2rem; font-weight:700; margin-bottom: .5rem; color: var(--primary-color); }
+    .bullet-list { list-style: none; padding-left: 0; }
+    .bullet-list li { padding:.4rem 0; color: var(--foreground); }
+    .bullet-list li::before { content: "✓"; color: var(--primary-color); font-weight: 900; margin-right: .5rem; }
+
+    .muted-box { background: #f8faf9; border:1px dashed var(--border); border-radius:12px; padding:1.25rem; color: var(--muted); }
+    .quote { font-size:1.05rem; font-style: italic; border-left: 4px solid var(--accent-color); padding-left: 1rem; color: var(--foreground); }
+
+    /* Icons (simple circle holders) */
+    .icon { width:44px; height:44px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; margin-right:.5rem; background:rgba(22,101,52,.1); color:var(--primary-color); font-weight:700; }
+
+    /* Patent banner style reuse */
+    .band { background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); color:#fff; }
+    /* Stewardship banner enhancements */
+    #stewardship { position: relative; padding: 96px 0; }
+    #stewardship .container { position: relative; }
+    #stewardship::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(1200px 400px at 80% 20%, rgba(255,255,255,.12), transparent 60%),
+                  radial-gradient(800px 300px at 10% 80%, rgba(255,255,255,.08), transparent 60%); }
+    #stewardship .headline { color:#fff; font-weight: 800; line-height: 1.35;
+      font-size: clamp(1.1rem, 0.9rem + 1.2vw, 1.75rem); text-shadow: 0 2px 8px rgba(0,0,0,.18); text-align:left; max-width: 980px; margin: 0; }
+    #stewardship .highlight { color: #ffe9a9; text-shadow: 0 3px 12px rgba(0,0,0,.25); }
+
+    /* Stewardship split layout */
+    #stewardship .steward-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items:center; }
+    #stewardship .media img { width:100%; height:100%; max-height:420px; object-fit:cover; border-radius:12px; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+    @media (max-width: 768px) {
+      #stewardship { padding: 72px 0; }
+      #stewardship .steward-grid { grid-template-columns: 1fr; }
+      #stewardship .headline { text-align:center; margin: 0 auto; }
+      #stewardship .media img { max-height: 260px; }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero { padding: 0 16px; }
+      .hero h1 { font-size: 2.1rem; }
+      .hero p { font-size: 1rem; }
+      .mobile-menu-button { display:flex; }
+      .nav-links { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; flex-direction:column; padding:1rem 0; border-top:1px solid var(--border); box-shadow:0 4px 6px rgba(0,0,0,.08); }
+      .nav-links.active { display:flex; }
+      .nav-links a { padding: .85rem 0; text-align:center; border-bottom:1px solid var(--border); }
+      .nav-links a:last-child { border-bottom:none; }
+    }
+
+    html { scroll-behavior: smooth; }
+    .fade-in { opacity:0; transform: translateY(20px); transition: all .5s ease; }
+    .fade-in.visible { opacity:1; transform: translateY(0); }
+  </style>
 </head>
-
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
-            <a href="#home" class="logo">
-                <img src="./assets/3R Logo.JPG" alt="3R Eco Bounty Highway Logo">
-                <span>Eco Bounty</span>
-            </a>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="#home" class="logo">
+        <img src="./assets/3R%20Logo.JPG" alt="Eco-Gypsum Logo" />
+        <span>Eco-Gypsum</span>
+      </a>
+      <button class="mobile-menu-button" id="mobileMenuButton">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links mb-0" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#technology">Technology</a></li>
+        <li><a href="#applications">Applications</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-button" id="mobileMenuButton">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <ul class="nav-links mb-0" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#technology">Technology</a></li>
-                <li><a href="#patent">Patent</a></li>
-                <li><a href="#company">Company</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="p-3 pb-0 mt-3 mb-2">
-                <!-- <img src="./assets/3R Logo.JPG" class="header_image" alt="3R_image"> -->
-            </div>
-            <h1 class="my-text">
-                Transforming Industrial Waste into<br>
-                <span class="accent my-text2">Valuable Eco-Gypsum</span>
-            </h1>
-            <p class="para-text">
-                Driving Circular Economy with 3R Innovation — Protecting Environment,
-                Preserving Resources by Converting Multiple Industrial Wastes into Eco-Gypsum
-            </p>
-            <div>
-                <a href="#technology" class="btn btn-outline mb-3">Learn About Technology</a>
-                <a href="#contact" class="btn btn-primary mb-3">Contact Us Today</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technology Overview -->
-    <section id="technology" class="section">
-        <div class="container">
-            <h2 class="section-title">Revolutionary 3R Eco Gypsum Technology</h2>
-            <p class="section-subtitle">
-                Our patented process converts multiple industrial wastes into valuable eco-gypsum
-                at ambient temperature, achieving zero effluent with complete resource recovery.
-            </p>
-
-            <div class="process-grid">
-                <div class="process-card fade-in">
-                    <div class="process-icon mb-3" style="height: 3rem;">
-                        <img class="h-100" src="./assets/truck.png" alt="">
-                    </div>
-                    <h3>Waste Collection</h3>
-                    <p class="waste-collection-text">Multiple industrial wastes including hazardous materials from various plants are collected as raw
-                        materials for conversion.</p>
-                </div>
-                <div class="process-card fade-in">
-                    <div class="process-icon mb-3"  style="height: 3rem;">
-                        <img class="h-100" src="./assets/reduce.png" alt="">
-                    </div>
-                    <div>
-                        <h3 class="proces">3R Processing</h3>
-                        <p>Patented ambient temperature conversion without heat treatment or melting, using innovative
-                            catalytic processes.
-                        </p>
-                    </div>
-                </div>
-                <div class="process-card fade-in">
-                    <div class="process-icon mb-3"  style="height: 3rem;">
-                         <img class="h-100" src="./assets/gypsum.png" alt="">
-                    </div>
-                    <h3>Eco-Gypsum Output</h3>
-                    <p class="pb-3">High-quality, non-degradable, eco-friendly product suitable for cement, chemical, and
-                        construction industries.</p>
-                </div>
-            </div>
-
-            <div class="benefits-grid">
-                <div class="benefit-card fade-in">
-                    <h3>Zero Effluent Process</h3>
-                    <ul class="benefit-list">
-                        <li>Complete conversion with no secondary waste</li>
-                        <li>No by-products or residual left over</li>
-                        <li>Reduces environmental pollution significantly</li>
-                        <li>Optimizes natural resource conservation</li>
-                    </ul>
-                </div>
-                <div class="benefit-card fade-in">
-                    <h3>Smart Import Substitute</h3>
-                    <ul class="benefit-list">
-                        <li>Suitable for cement, chemical, fertilizer industries</li>
-                        <li>Non-degradable and economically transportable</li>
-                        <li>Reduces heavy metal solubility safely</li>
-                        <li>Fuels sustainable growth in construction sector</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Patent Section -->
-    <section id="patent" class="section patent-section">
-        <div class="container">
-            <div class="patent-content">
-                <h2 class="section-title" style="color: white;">Patented Innovation</h2>
-                <div class="patent-number">Patent Holder: Harish Kandhari, MD</div>
-                <p class="section-subtitle" style="color: rgba(255,255,255,0.9); margin-bottom: 2rem;">
-                    Our breakthrough technology represents over 10 years of extensive R&D,
-                    resulting in a patented process for complete conversion of industrial wastes
-                    into sustainable alternatives.
-                </p>
-                <div
-                    style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 12px; backdrop-filter: blur(10px);">
-                    <h3 style="margin-bottom: 1rem;">Key Innovation Features:</h3>
-                    <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
-                        <li style="margin-bottom: 0.5rem;">Complete conversion without heat treatment</li>
-                        <li style="margin-bottom: 0.5rem;">Ambient temperature processing</li>
-                        <li style="margin-bottom: 0.5rem;">Zero secondary effluent generation</li>
-                        <li style="margin-bottom: 0.5rem;">Safe heavy metal solubility reduction</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Company Information -->
-<section id="company" class="section company-info">
-    <div class="container">
-        <div >
-            <h2 class="section-title">Company Information</h2>
-            <div class="row justify-content-center">
-                <div class="info-card fade-in col-md-5 m-3 p-4">
-                    <h3>Eco Bounty Highway Private Limited</h3>
-                    <p><strong>CIN:</strong> U37200RJ2016PTC056514</p>
-                    <p><strong>MSME Startup Co. DIPP No.:</strong> 1687</p>
-                    <p><strong>Founded:</strong> 2016</p>
-                </div>
-                <div class="info-card fade-in col-md-5 m-3 p-4">
-                    <h3>Registered Office</h3>
-                    <p>13-C Opp Town Hall</p>
-                    <p>Udaipur - 313001</p>
-                    <p>Rajasthan, India</p>
-                </div>
-                <div class="info-card fade-in col-md-5 m-3 p-4">
-                    <h3>Manufacturing Facility</h3>
-                    <p>Kharsa No 1696/396, 1697/396, 1699/397</p>
-                    <p>1700/397, 1702/398, 1703/398</p>
-                    <p>Village Lopra, Tehsil Mavli 313 203</p>
-                    <p>Dist Udaipur, Rajasthan</p>
-                </div>
-                <div class="info-card fade-in col-md-5 m-3 p-4">
-                    <h3>Leadership</h3>
-                    <p><strong>Managing Director:</strong> Harish Kandhari</p>
-                    <p><strong>Patent Holder</strong></p>
-                    <p>Expert in Industrial Waste Management</p>
-                    <p>10+ Years R&D Experience</p>
-                </div>
-            </div>
-        </div>
+  <!-- Hero / Banner -->
+  <section id="home" class="hero">
+    <div class="container text-center">
+      <h1>
+        <span id="mainTagline" class="d-block"></span>
+      </h1>
+      <p id="subLine">
+        A patented 3R-driven technology converting multiple industrial wastes into Eco-Gypsum — a smart import substitute for the cement industry.
+      </p>
+      <div class="mt-2">
+        <a href="#about" class="btn btn-outline mb-2">Learn More</a>
+        <a href="#technology" class="btn btn-primary mb-2">Our Technology</a>
+      </div>
     </div>
-</section>
+  </section>
 
+  <!-- Section 1 – About Us -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">Innovation for a Sustainable Tomorrow</h2>
+      <p class="section-subtitle">
+        We are sustainability innovators with a patented technology that converts multiple industrial wastes into Eco-Gypsum, a high-quality, cement-compatible alternative to natural gypsum. Our process, driven by the 3R Principle — Reduce, Reuse, Recycle — ensures zero residue, maximum resource recovery, and full alignment with circular economy goals.
+      </p>
+      <div class="grid-3">
+        <div class="card fade-in"><div class="icon">CE</div><h3>Circular Economy in Motion</h3></div>
+        <div class="card fade-in"><div class="icon">CC</div><h3>Climate Change Compliant</h3></div>
+        <div class="card fade-in"><div class="icon">PT</div><h3>Patented Zero-Waste Technology</h3></div>
+        <div class="card fade-in"><div class="icon">CI</div><h3>Cement Industry Ready</h3></div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <p class="section-subtitle">
-                Ready to transform your industrial waste into valuable resources?
-                Get in touch with our team to discuss your specific requirements.
-            </p>
-
-            <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
-                <div
-                    style="background: var(--card-bg); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">📞 Contact Information</h3>
-                    <p><strong>Mobile:</strong> +91 9829044741</p>
-                    <p><strong>Email:</strong> ecobountyhighway@gmail.com</p>
-                </div>
-                <div
-                    style="background: var(--card-bg); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">🏢 Business Enquiries</h3>
-                    <p>Pilot projects available in Udaipur, Rajasthan and Gujarat</p>
-                    <p>Customized solutions for your industrial waste</p>
-                </div>
-            </div>
+  <!-- Section 2 – Our Technology -->
+  <section id="technology" class="section band">
+    <div class="container">
+      <h2 class="section-title" style="color:#fff;">Patented 3R Technology — From Wastes to Eco-Gypsum</h2>
+      <div class="grid-2 mt-4">
+        <div class="card" style="background:rgba(255,255,255,.98);">
+          <h3>Technology Highlights</h3>
+          <ul class="bullet-list">
+            <li>Full Mass Conversion: 100% utilization of diverse industrial residues</li>
+            <li>Neutral & Non-Acidic Product: Cement-friendly gypsum without effluent discharge</li>
+            <li>Smart Import Substitute: Sustainable replacement for natural gypsum</li>
+            <li>Scalable & Proven: Flexible for cement industry expansion needs</li>
+          </ul>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Eco Bounty Highway Private Limited. All rights reserved.</p>
-            <a href="https://www.taldartechconsultancy.com/" class="text-decoration-none" target="_blank" style="color:#d4af37">Designed And Developed By Taldar Tech Consultancy</a>
+        <div class="card" style="background:rgba(255,255,255,.98);">
+          <h3>Process Overview</h3>
+          <div class="muted-box">
+            <strong>Process Infographic</strong>
+            <div class="mt-2">Wastes → 3R Conversion → Eco-Gypsum → Cement Industry</div>
+            <div class="small text-muted mt-2">(Illustrative placeholder)</div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/919829044741?text=Hello%20Eco%20Bounty%20Highway,%20I%20am%20interested%20in%20your%203R%20Eco%20Gypsum%20technology.%20Please%20provide%20more%20information."
-        class="whatsapp-button" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.690" />
-        </svg>
-    </a>
+  <!-- Section 2.5 – Patented Stewardship Statement -->
+  <section id="stewardship" class="section band">
+    <div class="container">
+      <div class="steward-grid">
+        <div class="media">
+          <img src="./assets/multiple-waste.webp" alt="Multiple industrial wastes to resource recovery" />
+        </div>
+        <div class="content">
+          <h2 class="headline">Patented Innovative and Sustainable Multiple Industrial Wastes Management and Alternate Raw Material Stewardship — Driving India’s Transformation toward a <span class="highlight">Circular, Green, and Climate-Positive Economy</span> through Scalable Resource Recovery Pathways.</h2>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Mobile menu functionality
-        const mobileMenuButton = document.getElementById('mobileMenuButton');
-        const navLinks = document.getElementById('navLinks');
+  <!-- Section 2.6 – Product Streams -->
+  <section id="product-streams" class="section">
+    <div class="container">
+      <div class="grid-2 mt-3">
+        <div class="card fade-in">
+          <h3>Eco Gypsum -  Cement Industry ARM</h3>
+          <p>Eco Chemical Gypsum offers an enduring, high-demand solution for cement manufacturing, improving clinker factor and optimizing pozzolanic reactions — a reliable import substitute aligned with sustainable production goals.</p>
+        </div>
+        <div class="card fade-in">
+          <h3>Eco Gypsum Filler - Agri & Construction Industry ARM</h3>
+          <p>A highly cost-effective filler with superior hydraulic performance, enhancing material strength and durability for construction and agricultural applications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        mobileMenuButton.addEventListener('click', function () {
-            mobileMenuButton.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
+  <!-- Section 3 – Cement Industry Applications -->
+  <section id="applications" class="section">
+    <div class="container">
+      <h2 class="section-title">Eco-Gypsum: A Cement Industry Game-Changer</h2>
+      <div class="grid-2 mt-3">
+        <div class="card fade-in">
+          <h3>Engineered for Seamless Integration</h3>
+          <ul class="bullet-list">
+            <li>Reliable import substitution</li>
+            <li>Stable chemical & physical properties</li>
+            <li>Cost efficiency and resource security</li>
+            <li>Sustainability compliance for green cement production</li>
+          </ul>
+        </div>
+        <div class="card fade-in">
+          <div class="quote">“Eco-Gypsum empowers cement industries to expand capacity sustainably while reducing dependence on imported gypsum.”</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function () {
-                mobileMenuButton.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
+  <!-- Section 4 – Sustainability Impact -->
+  <section id="impact" class="section" style="background: #f7fbf9;">
+    <div class="container">
+      <h2 class="section-title">Driving Green Growth with 3R Innovation</h2>
+      <div class="grid-3 mt-3">
+        <div class="card fade-in"><div class="icon">CE</div><h3>Circular Economy</h3><p class="mb-0">Zero waste, full conversion process</p></div>
+        <div class="card fade-in"><div class="icon">EP</div><h3>Environmental Protection</h3><p class="mb-0">No landfill, no toxic discharge</p></div>
+        <div class="card fade-in"><div class="icon">RR</div><h3>Resource Recovery</h3><p class="mb-0">Conserving natural gypsum reserves</p></div>
+        <div class="card fade-in"><div class="icon">CP</div><h3>Climate Positive</h3><p class="mb-0">Lower carbon footprint, climate compliant</p></div>
+      </div>
+    </div>
+  </section>
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+  <!-- Section 5 – Why Choose Eco-Gypsum? -->
+  <section id="why" class="section">
+    <div class="container">
+      <h2 class="section-title">Eco-Gypsum Advantage</h2>
+      <div class="grid-2 mt-3">
+        <div class="card fade-in">
+          <ul class="bullet-list">
+            <li>Patented, Proven & Scalable</li>
+            <li>100% Waste Conversion, Zero Residue</li>
+            <li>Sustainable & Climate-Compliant</li>
+            <li>Import Substitute, Cost-Effective</li>
+            <li>Supports Cement Industry Green Growth</li>
+          </ul>
+        </div>
+        <div class="card fade-in">
+          <h3>Next Steps</h3>
+          <p class="mb-2">Want to evaluate Eco-Gypsum for your plant?</p>
+          <div>
+            <a href="#contact" class="btn btn-primary mb-2">Contact Us</a>
+            <a href="#contact" class="btn btn-outline mb-2">Request Technical Datasheet</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+  <!-- Contact / Simple CTA Anchor -->
+  <section id="contact" class="section" style="background:#fff;">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-subtitle">Reach out to explore pilots, specifications, and supply partnerships.</p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Contact Information</h3>
+          <p class="mb-1"><strong>Mobile:</strong> +91 9829044741</p>
+          <p class="mb-1"><strong>Email:</strong> ecobountyhighway@gmail.com</p>
+        </div>
+        <div class="card">
+          <h3>Business Enquiries</h3>
+          <p class="mb-1">Pilot projects available in Udaipur, Rajasthan and Gujarat</p>
+          <p class="mb-0">Customized solutions for your industrial waste</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+  <!-- Footer -->
+  <footer class="py-4" style="background: var(--foreground); color:#fff; text-align:center;">
+    <div class="container">
+      <div>&copy; 2025 Eco Bounty Highway Private Limited. All rights reserved.</div>
+      <a href="https://www.taldartechconsultancy.com/" class="text-decoration-none" target="_blank" style="color:#d4af37">Designed And Developed By Taldar Tech Consultancy</a>
+    </div>
+  </footer>
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
+  <a href="https://wa.me/919829044741?text=Hello%20Eco-Gypsum" class="position-fixed" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp" style="right:20px; bottom:20px; width:60px; height:60px; background:#25d366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(37,211,102,.4); text-decoration:none;">
+    <svg viewBox="0 0 24 24" fill="#fff" width="30" height="30" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.690"/></svg>
+  </a>
 
-        // Header background on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-        });
-    </script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+  <script>
+    // Mobile menu
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+    const navLinks = document.getElementById('navLinks');
+    mobileMenuButton.addEventListener('click', () => { mobileMenuButton.classList.toggle('active'); navLinks.classList.toggle('active'); });
+    document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{ mobileMenuButton.classList.remove('active'); navLinks.classList.remove('active'); }));
+
+    // Fade-in on scroll
+    const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); }); }, {threshold:.1, rootMargin:'0px 0px -50px 0px'});
+    document.querySelectorAll('.fade-in, .card').forEach(el=>io.observe(el));
+
+    // Rotating main tagline (slider)
+    const taglines = [
+      'Eco-Gypsum: Circular Economy in Action — Turning Industrial Wastes into Sustainable Cement Solutions.',
+      'From Waste to Worth — Patented 3R Innovation Delivering Eco-Gypsum for a Green Future.',
+      'Protecting Environment. Preserving Resources. Powering Cement Growth.'
+    ];
+    const mainTaglineEl = document.getElementById('mainTagline');
+    let taglineIndex = 0;
+    function setTagline(i){ mainTaglineEl.textContent = taglines[i]; }
+    setTagline(taglineIndex);
+    setInterval(()=>{ taglineIndex = (taglineIndex + 1) % taglines.length; setTagline(taglineIndex); }, 3500);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
-
 </html>
+
